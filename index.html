@@ -1,0 +1,82 @@
+
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kalkulator Persegi Panjang</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <main class="calculator">
+        <header class="topbar">
+            <a class="brand" href="#" aria-label="HitungRuang">▱ <span>hitung<span class="accent">ruang</span></span></a>
+            <div class="header-tools">
+                <span class="category">GEOMETRI DASAR <i>/</i> 01</span>
+                <label class="theme-control">
+                    <input class="theme-input" id="theme-toggle" type="checkbox" role="switch">
+                    <span class="theme-switch" aria-hidden="true"><span></span></span>
+                    <span>Mode gelap</span>
+                </label>
+            </div>
+        </header>
+
+        <section class="intro" aria-labelledby="title">
+            <p class="eyebrow">KALKULATOR BENTUK DATAR</p>
+            <h1 id="title">Persegi panjang<span>.</span></h1>
+            <p>Ukur sisinya, temukan luas dan kelilingnya.</p>
+        </section>
+
+        <section class="workspace" aria-label="Kalkulator persegi panjang">
+            <form class="dimensions" id="rectangle-form">
+                <div class="section-title"><span>01</span><h2>Masukkan ukuran</h2></div>
+                <label for="panjang">Panjang</label>
+                <div class="input-wrap">
+                    <input id="panjang" name="panjang" type="number" value="20" min="0.01" step="any" inputmode="decimal" required>
+                    <span>meter</span>
+                </div>
+                <label for="lebar">Lebar</label>
+                <div class="input-wrap">
+                    <input id="lebar" name="lebar" type="number" value="15" min="0.01" step="any" inputmode="decimal" required>
+                    <span>meter</span>
+                </div>
+                <button type="submit">Hitung ukuran <span aria-hidden="true">↗</span></button>
+            </form>
+
+            <section class="results" aria-labelledby="results-title" aria-live="polite">
+                <div class="section-title results-title">
+                    <span>02</span><h2 id="results-title">Hasil hitung</h2>
+                    <span class="status"><i></i> HASIL</span>
+                </div>
+                <figure class="diagram" aria-labelledby="diagram-caption">
+                    <figcaption id="diagram-caption" class="visually-hidden">Visualisasi persegi panjang dengan ukuran sesuai input</figcaption>
+                    <span class="measure measure-length"><output id="visual-panjang">20</output> m</span>
+                    <div class="rectangle" id="rectangle-visual" role="img" aria-label="Persegi panjang, panjang 20 meter dan lebar 15 meter"><span></span></div>
+                    <span class="measure measure-width"><output id="visual-lebar">15</output> m</span>
+                </figure>
+                <div class="result-grid">
+                    <article class="result-item">
+                        <span class="result-label">Luas</span>
+                        <p><output id="luas">300</output><small>m<sup>2</sup></small></p>
+                        <span class="formula">panjang × lebar</span>
+                    </article>
+                    <article class="result-item">
+                        <span class="result-label">Keliling</span>
+                        <p><output id="keliling">70</output><small>m</small></p>
+                        <span class="formula">2 × (panjang + lebar)</span>
+                    </article>
+                </div>
+            </section>
+        </section>
+
+        <footer class="footer">
+            <span>RUMUS SEDERHANA, HASIL NYATA</span>
+            <span>LUAS = p × l <i>·</i> KELILING = 2(p + l)</span>
+        </footer>
+    </main>
+    <script src="script.js" defer></script>
+</body>
+</html>
